@@ -146,6 +146,27 @@ img {
   align-items: center;
 }
 
+.hero-specialty-banner {
+  display: inline-grid;
+  gap: 4px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(var(--brand-rgb), 0.16), rgba(255, 255, 255, 0.95));
+  border: 1px solid rgba(var(--brand-rgb), 0.28);
+  box-shadow: 0 16px 36px rgba(7, 60, 61, 0.08);
+}
+
+.hero-specialty-banner strong {
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.hero-specialty-banner span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .hero-copy h1 {
   font-family: "DM Serif Display", serif;
   font-size: clamp(2.6rem, 4.5vw, 4.1rem);
@@ -197,6 +218,23 @@ img {
   border-radius: 26px;
   box-shadow: var(--shadow);
   border: 1px solid rgba(8, 178, 175, 0.12);
+}
+
+.specialist-tag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(15, 42, 43, 0.84);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 18px 30px rgba(9, 34, 36, 0.18);
 }
 
 .photo-card {
@@ -621,6 +659,12 @@ img {
 @media (max-width: 900px) {
   .menu {
     display: none;
+  }
+
+  .specialist-tag {
+    position: static;
+    margin: 12px 0 0;
+    justify-content: center;
   }
 
   .photo-card {
