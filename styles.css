@@ -194,7 +194,7 @@ img {
 }
 
 .hero-metrics div {
-  padding: 14px 16px;
+  padding: 14px 10px;
   border-radius: 14px;
   background: rgba(8, 178, 175, 0.06);
   border: 1px solid var(--line);
