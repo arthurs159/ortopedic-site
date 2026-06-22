@@ -12,6 +12,10 @@
   --radius: 22px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -213,6 +217,19 @@ img {
 .hero-photo {
   position: relative;
   aspect-ratio: 4 / 5;
+  isolation: isolate;
+}
+
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(244, 251, 251, 0.08), rgba(10, 62, 64, 0.14)),
+    linear-gradient(135deg, rgba(8, 178, 175, 0.1), rgba(244, 251, 251, 0.06));
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-photo img {
@@ -223,6 +240,7 @@ img {
   border-radius: 26px;
   box-shadow: var(--shadow);
   border: 1px solid rgba(8, 178, 175, 0.12);
+  filter: brightness(1.01) contrast(0.9) saturate(1.2);
 }
 
 .specialist-tag {
@@ -240,6 +258,7 @@ img {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   box-shadow: 0 18px 30px rgba(9, 34, 36, 0.18);
+  z-index: 2;
 }
 
 .photo-card {
@@ -251,6 +270,7 @@ img {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 14px 16px;
+  z-index: 2;
 }
 
 .badge {
