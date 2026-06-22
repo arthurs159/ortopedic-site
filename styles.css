@@ -556,77 +556,228 @@ img {
 }
 
 .contact {
-  padding: 90px 0;
+  padding: 96px 0 72px;
+  border-top: 1px solid var(--line);
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 36px;
-  align-items: start;
+.contact-heading {
+  max-width: 680px;
+  margin-bottom: 34px;
 }
 
-.contact h2 {
+.contact-heading h2 {
   font-family: "DM Serif Display", serif;
-  margin-bottom: 12px;
+  font-size: 2.2rem;
+  line-height: 1.12;
+  margin-bottom: 16px;
 }
 
-.contact-info {
+.contact-heading p:last-child {
+  color: #264d53;
+  font-size: 1rem;
+  max-width: 620px;
+}
+
+.contact-cards {
   display: grid;
-  gap: 14px;
-  margin-top: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-bottom: 34px;
 }
 
-.contact-info span {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.contact-form {
+.unit-card {
   background: #ffffff;
-  padding: 28px;
-  border-radius: var(--radius);
+  border-radius: 28px;
   border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  box-shadow: 0 20px 48px rgba(7, 54, 59, 0.08);
+  overflow: hidden;
   display: grid;
-  gap: 14px;
+  min-height: 100%;
 }
 
-.contact-form label {
+.unit-card__body {
+  padding: 26px 26px 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.unit-card__top {
   display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 18px;
+  align-items: start;
+  min-height: 148px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(15, 42, 43, 0.1);
+}
+
+.unit-card__top > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.unit-card__icon,
+.contact-schedule__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f2fbfb, #e8f6f6);
+  color: var(--brand);
+  box-shadow: inset 0 0 0 1px rgba(var(--brand-rgb), 0.12);
+}
+
+.unit-card__icon svg,
+.contact-schedule__icon svg,
+.unit-card__phone-icon svg,
+.contact-schedule__button svg {
+  width: 30px;
+  height: 30px;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.unit-card__top h3 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+
+.unit-card__top p {
+  color: #31555b;
+  font-size: 0.97rem;
+}
+
+.unit-card__top a {
+  display: inline-flex;
+  align-items: center;
   gap: 6px;
+  margin-top: 6px;
+  color: var(--brand);
   font-weight: 600;
-  font-size: 0.95rem;
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 10px 12px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  background: #f6fbfb;
-  color: var(--ink);
+.unit-card__top a::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-radius: 999px 999px 999px 0;
+  transform: rotate(-45deg);
+  box-sizing: border-box;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: 2px solid rgba(var(--brand-rgb), 0.22);
-  border-color: var(--brand);
+.unit-card__hours {
+  display: grid;
+  gap: 4px;
+  padding: 16px 0 18px;
+  min-height: 88px;
+  align-content: start;
 }
 
-.form-note {
-  font-size: 0.85rem;
-  color: var(--muted);
+.unit-card__hours strong {
+  font-size: 0.98rem;
+}
+
+.unit-card__hours span {
+  color: #78969a;
+}
+
+.unit-card__phone {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #18b8c1, #0eb4a8);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  box-shadow: 0 16px 28px rgba(8, 178, 175, 0.2);
+  margin-top: auto;
+}
+
+.unit-card__phone-icon,
+.contact-schedule__button span {
+  display: inline-flex;
+  color: currentColor;
+}
+
+.unit-card__phone-icon svg,
+.contact-schedule__button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.unit-card__cta {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: var(--brand);
+  font-weight: 500;
+}
+
+.unit-card__map {
+  flex: 0 0 180px;
+}
+
+.contact-schedule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 26px;
+  border-radius: 28px;
+  border: 1px solid rgba(var(--brand-rgb), 0.08);
+  background: linear-gradient(90deg, rgba(var(--brand-rgb), 0.08), rgba(255, 255, 255, 0.92));
+  box-shadow: 0 20px 40px rgba(7, 54, 59, 0.05);
+}
+
+.contact-schedule__copy {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-schedule__copy strong {
+  display: block;
+  font-size: 1.02rem;
+  margin-bottom: 4px;
+}
+
+.contact-schedule__copy p {
+  color: #31555b;
+  max-width: 420px;
+}
+
+.contact-schedule__button {
+  min-width: 420px;
+  min-height: 56px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(var(--brand-rgb), 0.55);
+  color: var(--brand);
+  background: rgba(255, 255, 255, 0.86);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.98rem;
+  font-weight: 700;
 }
 
 .site-footer {
-  background: #eef6f6;
+  background: rgba(235, 244, 244, 0.78);
   color: #37585c;
-  padding: 32px 0;
+  padding: 28px 0 34px;
   border-top: 1px solid var(--line);
 }
 
@@ -676,6 +827,20 @@ img {
     position: static;
     margin-top: 12px;
   }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-schedule {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-schedule__button {
+    min-width: 0;
+    width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
@@ -685,5 +850,41 @@ img {
 
   .hero {
     padding-top: 80px;
+  }
+
+  .contact {
+    padding-top: 84px;
+  }
+
+  .contact-heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .unit-card__body {
+    padding: 22px 20px 16px;
+  }
+
+  .unit-card__top {
+    grid-template-columns: 56px 1fr;
+    gap: 14px;
+    min-height: 0;
+  }
+
+  .unit-card__icon,
+  .contact-schedule__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .contact-schedule {
+    padding: 20px;
+  }
+
+  .contact-schedule__copy {
+    align-items: flex-start;
+  }
+
+  .contact-schedule__copy p {
+    max-width: none;
   }
 }
