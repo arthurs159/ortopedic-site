@@ -107,7 +107,7 @@ img {
   border-radius: 999px;
   font-weight: 600;
   border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-primary {
@@ -118,7 +118,8 @@ img {
 
 .btn-primary:hover {
   background: var(--brand-dark);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 38px rgba(8, 178, 175, 0.28);
 }
 
 .btn-ghost {
@@ -129,6 +130,7 @@ img {
 
 .btn-ghost:hover {
   background: rgba(var(--brand-rgb), 0.12);
+  transform: translateY(-2px);
 }
 
 .eyebrow {
@@ -600,8 +602,8 @@ img {
 
 .contact-cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
   margin-bottom: 34px;
 }
 
@@ -616,7 +618,7 @@ img {
 }
 
 .unit-card__body {
-  padding: 26px 26px 18px;
+  padding: 30px 30px 22px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -627,7 +629,6 @@ img {
   grid-template-columns: 68px 1fr;
   gap: 18px;
   align-items: start;
-  min-height: 148px;
   padding-bottom: 22px;
   border-bottom: 1px solid rgba(15, 42, 43, 0.1);
 }
@@ -664,13 +665,15 @@ img {
 }
 
 .unit-card__top h3 {
-  font-size: 1.02rem;
-  margin-bottom: 6px;
+  font-size: 1.12rem;
+  line-height: 1.3;
+  margin-bottom: 8px;
 }
 
 .unit-card__top p {
   color: #31555b;
-  font-size: 0.97rem;
+  font-size: 0.99rem;
+  line-height: 1.55;
 }
 
 .unit-card__top a {
@@ -694,9 +697,9 @@ img {
 
 .unit-card__hours {
   display: grid;
-  gap: 4px;
-  padding: 16px 0 18px;
-  min-height: 88px;
+  gap: 10px;
+  padding: 18px 0 20px;
+  min-height: 96px;
   align-content: start;
 }
 
@@ -708,41 +711,123 @@ img {
   color: #78969a;
 }
 
-.unit-card__phone {
-  min-height: 48px;
+.unit-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.unit-card__meta-label {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 12px 20px;
+  min-height: 28px;
+  padding: 0 10px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #18b8c1, #0eb4a8);
-  color: #ffffff;
-  font-size: 0.98rem;
+  background: rgba(var(--brand-rgb), 0.08);
+  color: var(--brand-dark);
+  font-size: 0.78rem;
   font-weight: 700;
-  box-shadow: 0 16px 28px rgba(8, 178, 175, 0.2);
-  margin-top: auto;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-.unit-card__phone-icon,
-.contact-schedule__button span {
+.unit-card__meta-value {
+  color: #4f6f73;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.unit-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.contact-schedule__button span,
+.unit-card__cta-icon,
+.floating-whatsapp__icon {
   display: inline-flex;
+}
+
+.contact-schedule__button span {
   color: currentColor;
 }
 
-.unit-card__phone-icon svg,
 .contact-schedule__button svg {
   width: 22px;
   height: 22px;
 }
 
 .unit-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 0;
+  padding: 14px 18px;
+  min-height: 56px;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 155, 74, 0.2);
+  background: linear-gradient(135deg, #1bb35e, #149b4a);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 16px 30px rgba(20, 155, 74, 0.18);
+  transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.unit-card__cta--primary {
+  width: 100%;
+  padding-inline: 18px;
+}
+
+.unit-card__cta span:first-child {
+  order: 2;
+}
+
+.unit-card__cta-icon {
+  order: 1;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.unit-card__cta-icon img,
+.floating-whatsapp__icon img {
+  width: 16px;
+  height: 16px;
   display: block;
-  margin-top: 10px;
-  text-align: center;
+  object-fit: contain;
+}
+
+.unit-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--brand);
-  font-weight: 500;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 2px 2px 2px 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.unit-card__link::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
 }
 
 .unit-card__map {
@@ -792,6 +877,7 @@ img {
   gap: 10px;
   font-size: 0.98rem;
   font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .site-footer {
@@ -824,12 +910,42 @@ img {
   position: fixed;
   right: 24px;
   bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--brand);
   color: #ffffff;
   padding: 12px 18px;
   border-radius: 999px;
   box-shadow: var(--shadow);
   font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.unit-card__cta:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #18a857, #118742);
+  border-color: rgba(20, 155, 74, 0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 34px rgba(20, 155, 74, 0.24);
+}
+
+.unit-card__link:hover {
+  color: var(--brand-dark);
+  transform: translateY(-1px);
+}
+
+.contact-schedule__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(8, 178, 175, 0.16);
+  border-color: rgba(var(--brand-rgb), 0.8);
+  background: #ffffff;
+}
+
+.floating-whatsapp:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 36px rgba(8, 178, 175, 0.28);
 }
 
 @media (max-width: 900px) {
