@@ -532,33 +532,6 @@ img {
   margin-bottom: 12px;
 }
 
-.results {
-  padding: 90px 0;
-}
-
-.results h2 {
-  font-family: "DM Serif Display", serif;
-  margin-bottom: 24px;
-}
-
-.results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.results article {
-  background: #ffffff;
-  padding: 22px;
-  border-radius: 16px;
-  border: 1px solid var(--line);
-}
-
-.results p {
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
 .cta {
   padding: 70px 0;
   background: linear-gradient(120deg, rgba(var(--brand-rgb), 0.18), rgba(255, 255, 255, 0.9));
